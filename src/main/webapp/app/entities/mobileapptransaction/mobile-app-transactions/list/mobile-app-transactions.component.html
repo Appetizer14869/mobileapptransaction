@@ -1,0 +1,299 @@
+<div>
+  <h2 id="page-heading" data-cy="MobileAppTransactionsHeading">
+    <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.home.title">Mobile App Transactions</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-mobile-app-transactions"
+        [routerLink]="['/mobileapptransaction/mobile-app-transactions/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.home.createLabel"
+          >Create a new Mobile App Transactions</span
+        >
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (mobileAppTransactions().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.home.notFound"
+        >No Mobile App Transactions found</span
+      >
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="channel">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.channel">Channel</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="channelIp">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.channelIp">Channel Ip</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="channelReference">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.channelReference"
+                  >Channel Reference</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="channelTimestamp">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.channelTimestamp"
+                  >Channel Timestamp</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="clientId">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.clientId">Client Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="createdAt">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.createdAt">Created At</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="debitAccount">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.debitAccount">Debit Account</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="direction">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.direction">Direction</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="errorDescription">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.errorDescription"
+                  >Error Description</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="geolocation">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.geolocation">Geolocation</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="hostCode">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.hostCode">Host Code</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="phoneNumber">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.phoneNumber">Phone Number</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="responseCode">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.responseCode">Response Code</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="responseMessage">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.responseMessage"
+                  >Response Message</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="transactionCode">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.transactionCode"
+                  >Transaction Code</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="transactionType">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.transactionType"
+                  >Transaction Type</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="userAgent">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.userAgent">User Agent</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="userAgentVersion">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.userAgentVersion"
+                  >User Agent Version</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="amount">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.amount">Amount</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="chargeamount">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.chargeamount">Chargeamount</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="creditAccount">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.creditAccount">Credit Account</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="cbsReference">
+              <div class="d-flex">
+                <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.cbsReference">Cbs Reference</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (mobileAppTransactions of mobileAppTransactions(); track trackId(mobileAppTransactions)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/mobileapptransaction/mobile-app-transactions', mobileAppTransactions.id, 'view']">{{
+                  mobileAppTransactions.id
+                }}</a>
+              </td>
+              <td>{{ mobileAppTransactions.channel }}</td>
+              <td>{{ mobileAppTransactions.channelIp }}</td>
+              <td>{{ mobileAppTransactions.channelReference }}</td>
+              <td>{{ mobileAppTransactions.channelTimestamp }}</td>
+              <td>{{ mobileAppTransactions.clientId }}</td>
+              <td>{{ mobileAppTransactions.createdAt }}</td>
+              <td>{{ mobileAppTransactions.debitAccount }}</td>
+              <td>{{ mobileAppTransactions.direction }}</td>
+              <td>{{ mobileAppTransactions.errorDescription }}</td>
+              <td>{{ mobileAppTransactions.geolocation }}</td>
+              <td>{{ mobileAppTransactions.hostCode }}</td>
+              <td>{{ mobileAppTransactions.phoneNumber }}</td>
+              <td>{{ mobileAppTransactions.responseCode }}</td>
+              <td>{{ mobileAppTransactions.responseMessage }}</td>
+              <td>{{ mobileAppTransactions.transactionCode }}</td>
+              <td>{{ mobileAppTransactions.transactionType }}</td>
+              <td>{{ mobileAppTransactions.userAgent }}</td>
+              <td>{{ mobileAppTransactions.userAgentVersion }}</td>
+              <td>{{ mobileAppTransactions.amount }}</td>
+              <td>{{ mobileAppTransactions.chargeamount }}</td>
+              <td>{{ mobileAppTransactions.creditAccount }}</td>
+              <td>{{ mobileAppTransactions.cbsReference }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a
+                    [routerLink]="['/mobileapptransaction/mobile-app-transactions', mobileAppTransactions.id, 'view']"
+                    class="btn btn-info btn-sm"
+                    data-cy="entityDetailsButton"
+                  >
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a
+                    [routerLink]="['/mobileapptransaction/mobile-app-transactions', mobileAppTransactions.id, 'edit']"
+                    class="btn btn-primary btn-sm"
+                    data-cy="entityEditButton"
+                  >
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(mobileAppTransactions)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+  @if (mobileAppTransactions().length > 0) {
+    <div>
+      <div class="d-flex justify-content-center">
+        <jhi-item-count [params]="{ page, totalItems, itemsPerPage }" />
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <ngb-pagination
+          [collectionSize]="totalItems"
+          [page]="page"
+          [pageSize]="itemsPerPage"
+          [maxSize]="5"
+          [rotate]="true"
+          [boundaryLinks]="true"
+          (pageChange)="navigateToPage($event)"
+        ></ngb-pagination>
+      </div>
+    </div>
+  }
+</div>

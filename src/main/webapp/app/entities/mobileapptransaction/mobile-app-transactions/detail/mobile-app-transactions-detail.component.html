@@ -1,0 +1,142 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (mobileAppTransactions(); as mobileAppTransactionsRef) {
+      <div>
+        <h2 data-cy="mobileAppTransactionsDetailsHeading">
+          <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.detail.title">Mobile App Transactions</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.channel">Channel</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.channel }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.channelIp">Channel Ip</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.channelIp }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.channelReference">Channel Reference</span>
+          </dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.channelReference }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.channelTimestamp">Channel Timestamp</span>
+          </dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.channelTimestamp }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.clientId">Client Id</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.clientId }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.createdAt">Created At</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.createdAt }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.debitAccount">Debit Account</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.debitAccount }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.direction">Direction</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.direction }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.errorDescription">Error Description</span>
+          </dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.errorDescription }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.geolocation">Geolocation</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.geolocation }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.hostCode">Host Code</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.hostCode }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.phoneNumber">Phone Number</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.phoneNumber }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.responseCode">Response Code</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.responseCode }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.responseMessage">Response Message</span>
+          </dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.responseMessage }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.transactionCode">Transaction Code</span>
+          </dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.transactionCode }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.transactionType">Transaction Type</span>
+          </dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.transactionType }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.userAgent">User Agent</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.userAgent }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.userAgentVersion"
+              >User Agent Version</span
+            >
+          </dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.userAgentVersion }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.amount">Amount</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.amount }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.chargeamount">Chargeamount</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.chargeamount }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.creditAccount">Credit Account</span>
+          </dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.creditAccount }}</span>
+          </dd>
+          <dt><span jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.cbsReference">Cbs Reference</span></dt>
+          <dd>
+            <span>{{ mobileAppTransactionsRef.cbsReference }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button
+          type="button"
+          [routerLink]="['/mobileapptransaction/mobile-app-transactions', mobileAppTransactionsRef.id, 'edit']"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,360 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-mobile-app-transactions-heading"
+        data-cy="MobileAppTransactionsCreateUpdateHeading"
+        jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.home.createOrEditLabel"
+      >
+        Create or edit a Mobile App Transactions
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.id"
+              >ID</label
+            >
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_channel"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.channel"
+            >Channel</label
+          >
+          <input type="text" class="form-control" name="channel" id="field_channel" data-cy="channel" formControlName="channel" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_channelIp"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.channelIp"
+            >Channel Ip</label
+          >
+          <input type="text" class="form-control" name="channelIp" id="field_channelIp" data-cy="channelIp" formControlName="channelIp" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_channelReference"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.channelReference"
+            >Channel Reference</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="channelReference"
+            id="field_channelReference"
+            data-cy="channelReference"
+            formControlName="channelReference"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_channelTimestamp"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.channelTimestamp"
+            >Channel Timestamp</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="channelTimestamp"
+            id="field_channelTimestamp"
+            data-cy="channelTimestamp"
+            formControlName="channelTimestamp"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_clientId"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.clientId"
+            >Client Id</label
+          >
+          <input type="text" class="form-control" name="clientId" id="field_clientId" data-cy="clientId" formControlName="clientId" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_createdAt"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.createdAt"
+            >Created At</label
+          >
+          <input type="text" class="form-control" name="createdAt" id="field_createdAt" data-cy="createdAt" formControlName="createdAt" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_debitAccount"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.debitAccount"
+            >Debit Account</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="debitAccount"
+            id="field_debitAccount"
+            data-cy="debitAccount"
+            formControlName="debitAccount"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_direction"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.direction"
+            >Direction</label
+          >
+          <input type="text" class="form-control" name="direction" id="field_direction" data-cy="direction" formControlName="direction" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_errorDescription"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.errorDescription"
+            >Error Description</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="errorDescription"
+            id="field_errorDescription"
+            data-cy="errorDescription"
+            formControlName="errorDescription"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_geolocation"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.geolocation"
+            >Geolocation</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="geolocation"
+            id="field_geolocation"
+            data-cy="geolocation"
+            formControlName="geolocation"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_hostCode"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.hostCode"
+            >Host Code</label
+          >
+          <input type="text" class="form-control" name="hostCode" id="field_hostCode" data-cy="hostCode" formControlName="hostCode" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_phoneNumber"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.phoneNumber"
+            >Phone Number</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="phoneNumber"
+            id="field_phoneNumber"
+            data-cy="phoneNumber"
+            formControlName="phoneNumber"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_responseCode"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.responseCode"
+            >Response Code</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="responseCode"
+            id="field_responseCode"
+            data-cy="responseCode"
+            formControlName="responseCode"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_responseMessage"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.responseMessage"
+            >Response Message</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="responseMessage"
+            id="field_responseMessage"
+            data-cy="responseMessage"
+            formControlName="responseMessage"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_transactionCode"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.transactionCode"
+            >Transaction Code</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="transactionCode"
+            id="field_transactionCode"
+            data-cy="transactionCode"
+            formControlName="transactionCode"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_transactionType"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.transactionType"
+            >Transaction Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="transactionType"
+            id="field_transactionType"
+            data-cy="transactionType"
+            formControlName="transactionType"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_userAgent"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.userAgent"
+            >User Agent</label
+          >
+          <input type="text" class="form-control" name="userAgent" id="field_userAgent" data-cy="userAgent" formControlName="userAgent" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_userAgentVersion"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.userAgentVersion"
+            >User Agent Version</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="userAgentVersion"
+            id="field_userAgentVersion"
+            data-cy="userAgentVersion"
+            formControlName="userAgentVersion"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_amount"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.amount"
+            >Amount</label
+          >
+          <input type="text" class="form-control" name="amount" id="field_amount" data-cy="amount" formControlName="amount" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_chargeamount"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.chargeamount"
+            >Chargeamount</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="chargeamount"
+            id="field_chargeamount"
+            data-cy="chargeamount"
+            formControlName="chargeamount"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_creditAccount"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.creditAccount"
+            >Credit Account</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="creditAccount"
+            id="field_creditAccount"
+            data-cy="creditAccount"
+            formControlName="creditAccount"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_cbsReference"
+            jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.cbsReference"
+            >Cbs Reference</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="cbsReference"
+            id="field_cbsReference"
+            data-cy="cbsReference"
+            formControlName="cbsReference"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
