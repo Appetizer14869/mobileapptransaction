@@ -1,0 +1,103 @@
+{
+  "annotations": {
+    "changelogDate": "20250611094226"
+  },
+  "applications": "*",
+  "clientRootFolder": "mobileapptransaction",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "channel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "channelIp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "channelReference",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "channelTimestamp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "debitAccount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "direction",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "errorDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "geolocation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hostCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "responseCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "responseMessage",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "transactionCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "transactionType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userAgent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userAgentVersion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chargeamount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creditAccount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cbsReference",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "mobileapptransaction",
+  "name": "MobileAppTransactions",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no"
+}

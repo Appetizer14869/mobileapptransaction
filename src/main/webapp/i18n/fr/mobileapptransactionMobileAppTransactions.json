@@ -1,0 +1,45 @@
+{
+  "mobileapptransactionApp": {
+    "mobileapptransactionMobileAppTransactions": {
+      "home": {
+        "title": "MobileAppTransactions",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Mobile App Transactions",
+        "createOrEditLabel": "Créer ou éditer un Mobile App Transactions",
+        "notFound": "Aucun Mobile App Transactions trouvé"
+      },
+      "created": "Un nouveau Mobile App Transactions a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Mobile App Transactions avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Mobile App Transactions avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Mobile App Transactions {{ id }} ?"
+      },
+      "detail": {
+        "title": "Mobile App Transactions"
+      },
+      "id": "ID",
+      "channel": "Channel",
+      "channelIp": "Channel Ip",
+      "channelReference": "Channel Reference",
+      "channelTimestamp": "Channel Timestamp",
+      "clientId": "Client Id",
+      "createdAt": "Created At",
+      "debitAccount": "Debit Account",
+      "direction": "Direction",
+      "errorDescription": "Error Description",
+      "geolocation": "Geolocation",
+      "hostCode": "Host Code",
+      "phoneNumber": "Phone Number",
+      "responseCode": "Response Code",
+      "responseMessage": "Response Message",
+      "transactionCode": "Transaction Code",
+      "transactionType": "Transaction Type",
+      "userAgent": "User Agent",
+      "userAgentVersion": "User Agent Version",
+      "amount": "Amount",
+      "chargeamount": "Chargeamount",
+      "creditAccount": "Credit Account",
+      "cbsReference": "Cbs Reference"
+    }
+  }
+}

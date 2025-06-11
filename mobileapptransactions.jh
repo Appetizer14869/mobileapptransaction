@@ -1,0 +1,27 @@
+
+entity MobileAppTransactions {
+	channel String
+	channelIp String
+	channelReference String
+	channelTimestamp String
+	clientId String
+	createdAt String
+	debitAccount String
+	direction String
+	errorDescription String
+	geolocation String
+	hostCode String
+	phoneNumber String
+	responseCode String
+	responseMessage String
+	transactionCode String
+	transactionType String
+	userAgent String
+	userAgentVersion String
+	amount String
+	chargeamount String
+	creditAccount String
+	cbsReference String
+}
+
+paginate MobileAppTransactions with pagination

@@ -1,0 +1,30 @@
+@if (mobileAppTransactions) {
+  <form name="deleteForm" (ngSubmit)="confirmDelete(mobileAppTransactions.id!)">
+    <div class="modal-header">
+      <h4 class="modal-title" data-cy="mobileAppTransactionsDeleteDialogHeading" jhiTranslate="entity.delete.title">
+        Confirm delete operation
+      </h4>
+    </div>
+
+    <div class="modal-body">
+      <jhi-alert-error />
+      <p
+        id="jhi-delete-mobileAppTransactions-heading"
+        jhiTranslate="mobileapptransactionApp.mobileapptransactionMobileAppTransactions.delete.question"
+        [translateValues]="{ id: mobileAppTransactions.id }"
+      >
+        Are you sure you want to delete Mobile App Transactions {{ mobileAppTransactions.id }}?
+      </p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancel()">
+        <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+      </button>
+
+      <button id="jhi-confirm-delete-mobileAppTransactions" data-cy="entityConfirmDeleteButton" type="submit" class="btn btn-danger">
+        <fa-icon icon="times"></fa-icon>&nbsp;<span jhiTranslate="entity.action.delete">Delete</span>
+      </button>
+    </div>
+  </form>
+}
